@@ -18,21 +18,29 @@ $(document).ready(function(){
         for (var hour = 9; hour <= 17; hour++){
             console.log(hour);
             //timestamp
-            var timeStamp = $("<button>");
+            var timeStamp = $("<div>");
             timeStamp.attr("type", "text");
-            timeStamp.attr("value", hour);
+            timeStamp.text(hour);
+            
+            timeStamp.attr("class", "timeStamp");
+            //timeStamp.css("width","100%");
+            
             $("#timeStamp").append(timeStamp); 
           
             //input area
             var inputBox = $("<input>");
             inputBox.attr("type", "textarea");
-            inputBox.attr("value", "");
+            inputBox.attr("value", "GG");
+            inputBox.attr("class", "eventBox");
+            //inputBox.css("width","100%");
             $("#eventBox").append(inputBox);
 
             //save button
             var saveButton = $("<button>");
             saveButton.attr("type", "button");
             saveButton.attr("value", "Save");
+            saveButton.attr("class", "saveButton");
+            //saveButton.css("width","100%");
             $("#saveButton").append(saveButton);
        
          

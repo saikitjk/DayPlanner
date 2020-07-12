@@ -22,16 +22,31 @@ body {
     border-radius: 0;
     border-bottom: 10px solid black;
 }
-  
-textarea{
-    background: transparent;
-    border: none;
-    resize: none;
-    color: #000000;
-    border-left: 1px solid black;
-    padding: 10px;
+
+.col-md-2{
+    padding-right:0;
+    padding-left:0;
+}
+.col-md-8{
+    padding-right:0;
+    padding-left:0;
 }
   
+.timeStamp{
+    width: 100%;
+    height: 70px;
+    line-height: 5;
+}
+
+.eventBox{
+    width: 100%;
+    height: 70px;
+}
+
+.saveButton{
+    width: 100%;
+    height: 70px;
+}
 
 
 .footer{
@@ -74,4 +89,37 @@ textarea{
     padding-right: 15px;
     max-width: 35px;
     height: auto;
+}
+
+
+@media (max-width: 490px) {
+    .timeStamp{
+        width: 100%;
+        height: 70px;
+        line-height: 5;
+    }
+    
+    .eventBox{
+        height: 70px;
+        width: 100%;
+    }
+    
+    .saveButton{
+        height: 70px;
+        width: 100%
+    }
+    .col-sm-2{
+        padding-right:0;
+        padding-left:0;
+        width: 15%
+    }
+    .col-sm-8{
+        padding-right:0;
+        padding-left:0;
+        width: 70%
+    };
+    
+    
+
+
 }
