@@ -15,12 +15,20 @@ $(document).ready(function(){
 
     //generate textbox
     function genTextbox(){
+        var ampm = "";
         for (var hour = 9; hour <= 17; hour++){
-            console.log(hour);
+            //console.log(hour);
+            if (hour > 12) { 
+                ampm = "pm";
+              } 
+            else {
+                ampm = "am";
+              }
             //timestamp
+            console.log(ampm);
             var timeStamp = $("<div>");
             timeStamp.attr("type", "text");
-            timeStamp.text(hour);
+            timeStamp.text(hour + " " + ampm);
             
             timeStamp.attr("class", "timeStamp");
             //timeStamp.css("width","100%");
@@ -30,7 +38,7 @@ $(document).ready(function(){
             //input area
             var inputBox = $("<input>");
             inputBox.attr("type", "textarea");
-            inputBox.attr("value", "GG");
+            inputBox.attr("value", "");
             inputBox.attr("class", "eventBox");
             //inputBox.css("width","100%");
             $("#eventBox").append(inputBox);
@@ -48,15 +56,15 @@ $(document).ready(function(){
     }
 
     genTextbox();
- /*     var saveButton = $("<button>");
-            saveButton.addclass("col-md-1 fas fa-save btn-block savebutton");
-            saveButton.attr("type", "button");
-            saveButton.attr("value", "Save");
-            $("#saveButton").append(saveButton);
-            */
+    
+    
+    //Store to local
 
+    //retrive from local
 
-    //}
+    //save 
+
+    //
 
 
 
