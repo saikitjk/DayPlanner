@@ -1,10 +1,11 @@
 $(document).ready(function(){
-    function headerClock(){
-    //Time date on the header
     var nowDay = moment().format("MMMM DD gggg, dddd");
     var nowTime = moment().format("LTS");
+    var currentHour = moment().hour();
     var currentDay = $("#currentDay");
     var currentTime = $("#currentTime");
+    function headerClock(){
+    //Time date on the header
     currentDay.text(nowDay);
     currentTime.text(nowTime);
     }
@@ -76,6 +77,7 @@ $(document).ready(function(){
         eventRow.append(saveButtonColumn);
         saveButtonColumn.append(saveButton);
 
+        eventRowColor();
         //append to html
         eventRowContainer.append(eventRow);
     
@@ -105,6 +107,23 @@ $(document).ready(function(){
 
         });
 
+        function eventRowColor(){
+            //console.log(currentHour + " is ");
+            var inputBoxId = i;
+            console.log("gg " + i);
+            if ( inputBoxId < currentHour){
+                eventInputBox.css("background-color","#adadad");
+            }
+            else if (inputBoxId === currentHour){
+                eventInputBox.css("background-color","skyblue");
+            }
+            else {
+                eventInputBox.css("background-color", "#e6ff99");
+            }
+
+        }
+   
+        
 
 
 
