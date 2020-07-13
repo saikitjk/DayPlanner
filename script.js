@@ -19,6 +19,14 @@ $(document).ready(function(){
 
     for (var hour = 9; hour <= 17; hour++) {
         var index = hour - 9;
+        //display time
+        var ampm = "";
+        if (hour > 12) { 
+            ampm = "pm";
+        } 
+        else {
+            ampm = "am";
+        }
         
         var eventRow = $('<div>');
         eventRow.addClass('row');
@@ -31,10 +39,24 @@ $(document).ready(function(){
         var inputColumn = $('<div>');
         inputColumn.addClass('col-md-9  col-sm-8');
         var saveButtonColumn = $('<div>');
-        saveButtonColumn.addClass('col-md-1');
+        saveButtonColumn.addClass('col-md-1 col-sm-2');
+
+        const timeStamp = $('<div>');
+        timeStamp.attr('class','timeStamp');
+
+        //time stamp
+        timeStamp.text(hour + " " + ampm);
+        eventRow.append(timeColumn);
+        timeColumn.append(timeStamp);
+    
+        //append to html
+        eventRowContainer.append(eventRow);
+    
     
 
        };
+
+       
 
 
 
