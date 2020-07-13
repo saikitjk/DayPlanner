@@ -15,10 +15,10 @@ $(document).ready(function(){
 
     //retrieve event
     var eventArray = [];
-    savedEvent = JSON.parse(localStorage.getItem("eventArray"));
-    if(savedEvent !== null){}
+    savedEvent = JSON.parse(localStorage.getItem("storedArray"));
+    if(savedEvent !== null){
         eventArray = savedEvent;
-
+    }
 
     var eventRowContainer = $("#eventContainer");
     eventRowContainer.empty();
@@ -62,7 +62,7 @@ $(document).ready(function(){
         eventInputBox.attr("boxIndex",i);
         eventInputBox.attr("type","text");
         eventInputBox.attr("class","eventBox");
-        
+        eventInputBox.val(eventArray[i]);
         eventRow.append(inputColumn);
         inputColumn.append(eventInputBox);
 
@@ -98,7 +98,7 @@ $(document).ready(function(){
                 return; //check if tany data
             }
         
-            eventArray=[saveIndex] = value;
+            eventArray[saveIndex] = value;
 
         //store to local
         localStorage.setItem("storedArray", JSON.stringify(eventArray));

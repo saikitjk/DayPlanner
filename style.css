@@ -38,6 +38,10 @@ body {
     line-height: 1;
 }
 
+.eventBox:hover{
+    background-color: powderblue;
+}
+
 .saveButton{
     background-color: skyblue;
     width: 100%;
