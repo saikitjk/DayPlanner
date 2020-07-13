@@ -36,10 +36,12 @@ body {
     height: 70px;
     padding-left: 0.5rem;
     line-height: 1;
+    font-weight: bold;
 }
 
 .eventBox:hover{
     background-color: powderblue;
+   
 }
 
 .saveButton{
