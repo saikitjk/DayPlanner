@@ -14,6 +14,31 @@ $(document).ready(function(){
     //Time date on the header
 
 
+    var eventRowContainer = $("#eventContainer");
+    eventRowContainer.empty();
+
+    for (var hour = 9; hour <= 17; hour++) {
+        var index = hour - 9;
+        
+        var eventRow = $('<div>');
+        eventRow.addClass('row');
+        eventRow.addClass('eventRow');
+        eventRow.attr('hour-index',hour);
+    
+        //build the column in eventContainer
+        var timeColumn = $('<div>');
+        timeColumn.addClass('col-md-2 col-sm-2');
+        var inputColumn = $('<div>');
+        inputColumn.addClass('col-md-9  col-sm-8');
+        var saveButtonColumn = $('<div>');
+        saveButtonColumn.addClass('col-md-1');
+    
+
+       };
+
+
+
+
 
 
 });
