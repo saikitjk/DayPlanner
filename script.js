@@ -99,11 +99,11 @@ $(document).ready(function(){
 
     //build the columns in buttonContainer
     var leftColumn = $("<div>");
-    leftColumn.addClass("col-md-3");
+    leftColumn.addClass("col-md-4 col-sm-3");
     var middleColumn = $("<div>");
-    middleColumn.addClass("col-md-3");
+    middleColumn.addClass("col-md-4 col-sm-3");
     var rightColumn = $("<div>");
-    rightColumn.addClass("col-md-3");
+    rightColumn.addClass("col-md-4 col-sm-3");
 
     //left button
     var leftButton = $("<button>");
@@ -112,11 +112,21 @@ $(document).ready(function(){
     buttonRow.append(leftColumn);
     leftColumn.append(leftButton);
     //middle button
-       
+    var middleButton = $("<button>");
+    middleButton.attr("id", "clearEvent"); 
+    middleButton.attr("class","btn btn-warning");
+    buttonRow.append(middleColumn);
+    middleColumn.append(middleButton);
+
     //right button
+    var rightButton = $("<button>");
+    rightButton.attr("id", "nextDay"); 
+    rightButton.attr("class","btn btn-primary");
+    buttonRow.append(rightColumn);
+    rightColumn.append(rightButton);
 
     //append to buttonContainer
-    buttonContainer.append(buttonRow);
+    buttonContainer.append(buttonRow)
 
 
        $(document).on("click","button", function(event){
