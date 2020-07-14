@@ -1,7 +1,7 @@
 $(document).ready(function(){
     //previousday
     function previousDay(){
-        console.log("ggggg")
+        //console.log("ggggg")
         $("#eventContainer").hide();
         $("#nextEventContainer").hide();
         $("#prevEventContainer").show();
@@ -23,7 +23,7 @@ $(document).ready(function(){
         //retrieve event
         var prevEventArray = [];
         prevSavedEvent = JSON.parse(localStorage.getItem("prevStoredArray"));
-        if(savedEvent !== null){
+        if(preSavedEvent !== null){
             prevEventArray = prevSavedEvent;
         }
     
@@ -135,7 +135,7 @@ $(document).ready(function(){
                 prevEventArray = [];
                 localStorage.setItem("prevStoredArray", JSON.stringify(prevEventArray));
                 //console.log("remove worked")
-                savedEvent = JSON.parse(localStorage.getItem("prevStoredArray"));
+                prevSavedEvent = JSON.parse(localStorage.getItem("prevStoredArray"));
                 location.reload();
             }
     }
@@ -318,10 +318,16 @@ $(document).ready(function(){
             //console.log("resetbutton worked")
             resetEvent();
         });
-
+        //onclick yesterday button
         $("#previousDay").on("click",function(){
             console.log("previous day worked");
             previousDay();
+            
+        });
+        //onclick tomorrow button
+        $("#nextDay").on("click",function(){
+            console.log("next day worked");
+            nextDay();
             
         });
 
