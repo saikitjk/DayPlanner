@@ -211,7 +211,7 @@ $(document).ready(function(){
         $("#currentTime").hide();
         $("#previousDate").hide();
         $("#nextDate").show()
-        var nextDay = moment().subtract(1, "days").format("MMMM DD gggg, dddd");
+        var nextDay = moment().add(1, "days").format("MMMM DD gggg, dddd");
         var comingDay = $("#nextDate");
         function headerClock(){
         //Time date on the header
