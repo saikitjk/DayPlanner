@@ -277,7 +277,7 @@ $(document).ready(function(){
         
             //input box
             var eventInputBox = $("<input>");
-            eventInputBox.attr("id", `inputBoxId${i}`);
+            eventInputBox.attr("id", `nextInputBoxId${i}`);
             eventInputBox.attr("boxIndex",i);
             eventInputBox.attr("type","text");
             eventInputBox.attr("class","eventBox");
@@ -292,7 +292,7 @@ $(document).ready(function(){
             var saveButton = $("<button>");
             saveButton.attr("id", `saveButtonId${i}`);
             //console.log("gg" + index);
-            saveButton.attr("saveIndex",i);
+            saveButton.attr("nextSaveIndex",i);
             saveButton.attr("class","far fa-save saveButton");
             eventRow.append(saveButtonColumn);
             saveButtonColumn.append(saveButton);
@@ -310,16 +310,16 @@ $(document).ready(function(){
                 //console.log(event2Save);
                
     
-                var saveIndex = $(this).attr("saveIndex");
-                var inputId = "#inputBoxId" + saveIndex;
-                var value = $(inputId).val();
+                var nextSaveIndex = $(this).attr("nextSaveIndex");
+                var nextInputId = "#nextInputBoxId" + nextSaveIndex;
+                var nextValue = $(nextInputId).val();
                 //console.log('value= ', value); 
                 //console.log('index= ', saveIndex); 
-                if(value === ""){
+                if(nextValue === ""){
                     return; //check if tany data
                 }
             
-                nextEventArray[saveIndex] = value;
+                nextEventArray[nextSaveIndex] = nextValue;
     
             //store to local
             localStorage.setItem("nextStoredArray", JSON.stringify(nextEventArray));
