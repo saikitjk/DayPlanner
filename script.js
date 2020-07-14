@@ -88,9 +88,36 @@ $(document).ready(function(){
         //append to html
         eventRowContainer.append(eventRow);
     
-    
+       };//end of for loop
 
-       };
+    //button section
+    var buttonContainer = $("#buttonContainer");
+
+    var buttonRow = $("<div>");
+    buttonRow.addClass("row");
+    buttonRow.addClass("buttonRow");
+
+    //build the columns in buttonContainer
+    var leftColumn = $("<div>");
+    leftColumn.addClass("col-md-3");
+    var middleColumn = $("<div>");
+    middleColumn.addClass("col-md-3");
+    var rightColumn = $("<div>");
+    rightColumn.addClass("col-md-3");
+
+    //left button
+    var leftButton = $("<button>");
+    leftButton.attr("id", "previousDay"); 
+    leftButton.attr("class","btn btn-primary");
+    buttonRow.append(leftColumn);
+    leftColumn.append(leftButton);
+    //middle button
+       
+    //right button
+
+    //append to buttonContainer
+    buttonContainer.append(buttonRow);
+
 
        $(document).on("click","button", function(event){
             event.preventDefault();  
@@ -136,6 +163,13 @@ $(document).ready(function(){
             }
 
         }
+
+        //adding reset button
+        function resetEvent(){
+
+        }
+
+        //adding previous day and next day
    
         
 
