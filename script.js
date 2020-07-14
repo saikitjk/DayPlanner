@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    var thisDay = false;
+    var dayBefore = false;
+    var dayAfter = false;
+
     function controlButton(){
         var buttonContainer = $("#buttonContainer");
 
@@ -179,23 +183,23 @@ $(document).ready(function(){
             //store to local
             localStorage.setItem("prevStoredArray", JSON.stringify(prevEventArray));
             });
-    
-            //onclick clear button
-            $("#clearEvent").on("click",function(){
-                //console.log("resetbutton worked")
-                resetEvent();
-            });
-    
 
-    
             //adding reset button
-            function resetEvent(){
+            function prevResetEvent(){
                 prevEventArray = [];
                 localStorage.setItem("prevStoredArray", JSON.stringify(prevEventArray));
-                //console.log("remove worked")
+                console.log("previous remove worked")
                 prevSavedEvent = JSON.parse(localStorage.getItem("prevStoredArray"));
                 location.reload();
             }
+        /*
+            //onclick clear button
+            $("#clearEvent").on("click",function(){
+                console.log("preveious day resetbutton worked")
+                prevResetEvent();
+            });
+        */
+
     }
 
 ////////////////////////////////////////////////////////////////////////
@@ -324,23 +328,26 @@ $(document).ready(function(){
             //store to local
             localStorage.setItem("nextStoredArray", JSON.stringify(nextEventArray));
             });
-    
+
+            //adding reset button
+            function nextResetEvent(){
+                nextEventArray = [];
+                localStorage.setItem("nextStoredArray", JSON.stringify(nextEventArray));
+                console.log("next day remove worked")
+                nextSavedEvent = JSON.parse(localStorage.getItem("nextStoredArray"));
+                //location.reload();
+            }
+        /*
             //onclick clear button
             $("#clearEvent").on("click",function(){
-                //console.log("resetbutton worked")
-                resetEvent();
+                console.log("next day resetbutton worked")
+                nextResetEvent();
+                
             });
-    
+        */
 
     
-            //adding reset button
-            function resetEvent(){
-                nextEventArray = [];
-                localStorage.setItem("prevStoredArray", JSON.stringify(nextEventArray));
-                //console.log("remove worked")
-                nextSavedEvent = JSON.parse(localStorage.getItem("nextStoredArray"));
-                location.reload();
-            }
+        
     }
 
 ////////////////////////////////////////////////////////////////////////
@@ -469,26 +476,31 @@ $(document).ready(function(){
         localStorage.setItem("storedArray", JSON.stringify(eventArray));
         });
 
-        //onclick clear button
-        $("#clearEvent").on("click",function(){
-            //console.log("resetbutton worked")
-            resetEvent();
-        });
         //onclick yesterday button
         $("#previousDay").on("click",function(){
             console.log("previous day worked");
             previousDay();
+            thisDay = false;
+            dayAfter = false;
+            dayBefore = true;
+            
             
         });
         //onclick tomorrow button
         $("#nextDay").on("click",function(){
             console.log("next day worked");
             nextDay();
+            thisDay = false;
+            dayAfter = true;
+            dayBefore = false;
         });
         //onclick today button
         $("#today").on("click",function(){
             console.log("today worked");
             today();
+            thisDay = true;
+            dayAfter = false;
+            dayBefore = false;
         });
 
         //coloring today event rows
@@ -515,17 +527,51 @@ $(document).ready(function(){
 
         }
 
-        //adding reset button
+    }
+    today();
+
+
+
+
+    //today reset
         function resetEvent(){
             eventArray = [];
             localStorage.setItem("storedArray", JSON.stringify(eventArray));
-            //console.log("remove worked")
+            console.log(" today remove worked")
             savedEvent = JSON.parse(localStorage.getItem("storedArray"));
             location.reload();
         }
+        //next day reset
+        function nextResetEvent(){
+            nextEventArray = [];
+            localStorage.setItem("nextStoredArray", JSON.stringify(nextEventArray));
+            console.log("next day remove worked")
+            nextSavedEvent = JSON.parse(localStorage.getItem("nextStoredArray"));
+           //location.reload();
+        }
+        //previous day reset
+        function prevResetEvent(){
+            prevEventArray = [];
+            localStorage.setItem("prevStoredArray", JSON.stringify(prevEventArray));
+            console.log("previous remove worked")
+            prevSavedEvent = JSON.parse(localStorage.getItem("prevStoredArray"));
+            location.reload();
+            }
 
-    }
-    today();
+             //onclick clear button
+        $("#clearEvent").on("click",function(){
+            console.log("today resetbutton worked")
+            if(){
+                resetEvent();
+            }
+            else if(){
+                nextResetEvent();
+            }
+            else if(){
+                prevResetEvent();
+            }
+        });
+
 
 
 });
