@@ -184,6 +184,8 @@ $(document).ready(function(){
             eventArray = [];
             localStorage.setItem("storedArray", JSON.stringify(eventArray));
             //console.log("remove worked")
+            savedEvent = JSON.parse(localStorage.getItem("storedArray"));
+            location.reload();
         }
 
         //adding previous day and next day
