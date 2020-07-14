@@ -128,7 +128,7 @@ $(document).ready(function(){
     //append to buttonContainer
     buttonContainer.append(buttonRow)
 
-
+       //on click save button
        $(document).on("click","button", function(event){
             event.preventDefault();  
             //var event2Save = document.getElementById("eventBox").value;
@@ -148,13 +148,18 @@ $(document).ready(function(){
 
         //store to local
         localStorage.setItem("storedArray", JSON.stringify(eventArray));
+        });
 
+        //onclick clear button
+        $("#clearEvent").on("click",function(){
+            //console.log("resetbutton worked")
+            resetEvent();
         });
 
         function eventRowColor(){
             //console.log(currentHour + " is ");
             var inputBoxId = i;
-            console.log("gg " + i);
+            //console.log("gg " + i);
             if ( inputBoxId < currentHour){
                 eventInputBox.css("background-color","#ebebeb");
                 eventInputBox.css("opacity","0.6");
@@ -176,7 +181,9 @@ $(document).ready(function(){
 
         //adding reset button
         function resetEvent(){
-
+            eventArray = [];
+            localStorage.setItem("storedArray", JSON.stringify(eventArray));
+            //console.log("remove worked")
         }
 
         //adding previous day and next day
