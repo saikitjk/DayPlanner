@@ -26,14 +26,21 @@ $(document).ready(function(){
 
     for (var hour = 0; hour <= 24; hour++) {
         //set index for labeling input box
-        var i = hour
+        var i = hour;
+        var j = hour;
+        if(j > 12){
+            j = j-12;
+        }
+        else if ( j === 0){
+            j = j+12;
+        }
         //display time
         var ampm = "";
         if (hour > 12) { 
-            ampm = "pm";
+            ampm = "PM";
         } 
         else {
-            ampm = "am";
+            ampm = "AM";
         }
         
         var eventRow = $("<div>");
@@ -53,7 +60,7 @@ $(document).ready(function(){
         timeStamp.attr("class","timeStamp");
 
         //time stamp
-        timeStamp.text(hour + " " + ampm);
+        timeStamp.text(j + " " + ampm);
         eventRow.append(timeColumn);
         timeColumn.append(timeStamp);
     
@@ -114,10 +121,14 @@ $(document).ready(function(){
             if ( inputBoxId < currentHour){
                 eventInputBox.css("background-color","#ebebeb");
                 eventInputBox.css("opacity","0.6");
+                
+                
             }
             else if (inputBoxId === currentHour){
                 eventInputBox.css("background-color","#dbffff");
                 eventInputBox.css("opacity","0.6");
+                eventInputBox.css("font-family", "bold");
+                
             }
             else {
                 eventInputBox.css("background-color", "#ffffcc");
