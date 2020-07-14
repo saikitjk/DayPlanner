@@ -83,21 +83,12 @@ body {
 
 /*button row css*/
 
-.col-md-4{
+.col-md-3{
     padding-right:0;
     padding-left:0;
-    width: 33%
+    width: 25%
 }
-.col-md-4{
-    padding-right:0;
-    padding-left:0;
-    width: 33%
-};
-.col-md-4{
-    padding-right:0;
-    padding-left:0;
-    width: 33%
-}
+
 
 /*footer*/
 .footer{
@@ -187,18 +178,9 @@ body {
     .col-sm-3{
         padding-right:0;
         padding-left:0;
-        width: 33%
+        width: 25%
     }
-    .col-sm-3{
-        padding-right:0;
-        padding-left:0;
-        width: 33%
-    };
-    .col-sm-3{
-        padding-right:0;
-        padding-left:0;
-        width: 33%
-    }
+
     
     
 
