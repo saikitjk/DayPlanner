@@ -1,8 +1,9 @@
 
 .container{
-    /*background-color: #dddcdc;*/
+    /*background-color: #003300;*/
     /*min-height: calc(100vh - 64px);*/ 
     align-items: center;
+
 }
 
 .container h1{
@@ -23,12 +24,20 @@ body {
     border-bottom: 10px solid black;
 }
 
+.eventRow{
+    padding-top: 0.5rem;
+}
 
   
 .timeStamp{
+    background-color: bisque;
+    font-weight: bold;
     width: 100%;
     height: 70px;
     line-height: 5;
+    border-radius: 15px 0px 0px 15px;
+    display: inline-block;
+    border-color: black;
 }
 
 .eventBox{
@@ -36,7 +45,7 @@ body {
     height: 70px;
     padding-left: 0.5rem;
     line-height: 1;
-    font-weight: bold;
+    
 }
 
 .eventBox:hover{
@@ -46,8 +55,12 @@ body {
 
 .saveButton{
     background-color: skyblue;
+    border-radius: 0px 15px 15px 0px;
     width: 100%;
     height: 70px;
+    border-color: black;
+    
+    
 }
 
 .col-md-2{
@@ -113,6 +126,20 @@ body {
 
 
 @media (max-width: 490px) {
+    .container{
+        /*background-color: #003300;*/
+        /*min-height: calc(100vh - 64px);*/ 
+        align-items: center;
+        padding-left: 1.5rem;
+        padding-right: 0.5rem;
+    }
+
+    #eventContainer{
+        align-items: center;
+        padding-left: 1.5rem;
+        padding-right: 2rem;
+    }
+
     .timeStamp{
         width: 100%;
         height: 70px;

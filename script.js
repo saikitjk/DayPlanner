@@ -112,13 +112,16 @@ $(document).ready(function(){
             var inputBoxId = i;
             console.log("gg " + i);
             if ( inputBoxId < currentHour){
-                eventInputBox.css("background-color","#adadad");
+                eventInputBox.css("background-color","#ebebeb");
+                eventInputBox.css("opacity","0.6");
             }
             else if (inputBoxId === currentHour){
-                eventInputBox.css("background-color","skyblue");
+                eventInputBox.css("background-color","#dbffff");
+                eventInputBox.css("opacity","0.6");
             }
             else {
-                eventInputBox.css("background-color", "#e6ff99");
+                eventInputBox.css("background-color", "#ffffcc");
+                eventInputBox.css("opacity","0.6");
             }
 
         }
