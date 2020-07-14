@@ -65,6 +65,7 @@ $(document).ready(function(){
         $("#currentDay").hide();
         $("#currentTime").hide();
         $("#nextDate").hide();
+        $("#previousDate").show();
         var prevDay = moment().subtract(1, "days").format("MMMM DD gggg, dddd");
         var lastDay = $("#previousDate");
         function headerClock(){
@@ -209,6 +210,7 @@ $(document).ready(function(){
         $("#currentDay").hide();
         $("#currentTime").hide();
         $("#previousDate").hide();
+        $("#nextDate").show()
         var nextDay = moment().subtract(1, "days").format("MMMM DD gggg, dddd");
         var comingDay = $("#nextDate");
         function headerClock(){
@@ -349,11 +351,16 @@ $(document).ready(function(){
     $("#nextEventContainer").hide();
     $("#prevEventContainer").hide();
     $("#eventContainer").show();
+    $("#previousDate").hide();
+    $("#nextDate").hide();
+    $("#currentDay").show();
+    $("#currentTime").show();
     var nowDay = moment().format("MMMM DD gggg, dddd");
     var nowTime = moment().format("LTS");
     var currentHour = moment().hour();
     var currentDay = $("#currentDay");
     var currentTime = $("#currentTime");
+ 
     function headerClock(){
     //Time date on the header
     currentDay.text(nowDay);
