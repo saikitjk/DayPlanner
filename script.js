@@ -328,9 +328,14 @@ $(document).ready(function(){
         $("#nextDay").on("click",function(){
             console.log("next day worked");
             nextDay();
-            
+        });
+        //onclick today button
+        $("#today").on("click",function(){
+            console.log("today worked");
+            today();
         });
 
+        //coloring today event rows
         function eventRowColor(){
             //console.log(currentHour + " is ");
             var inputBoxId = i;
