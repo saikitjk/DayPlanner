@@ -103,7 +103,7 @@ $(document).ready(function(){
         prevEventRowContainer.empty();
         
     
-        for (var hour = 0; hour <= 24; hour++) {
+        for (var hour = 0; hour < 24; hour++) {
             //set index for labeling input box
             var i = hour;
             var j = hour;
@@ -115,7 +115,7 @@ $(document).ready(function(){
             }
             //display time
             var ampm = "";
-            if (hour > 12) { 
+            if (hour > 11) { 
                 ampm = "PM";
             } 
             else {
@@ -163,7 +163,7 @@ $(document).ready(function(){
             //console.log("gg" + i);
             saveButton.attr("prevSaveIndex",i);
             saveButton.attr("class","far fa-save saveButton");
-            saveButton.text("Set")
+            saveButton.text("Save")
             eventRow.append(saveButtonColumn);
             saveButtonColumn.append(saveButton);
     
