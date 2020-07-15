@@ -1,16 +1,15 @@
 $(document).ready(function(){
     
-    headerClock();
     //Time date on the header
     function headerClock(){
     var nowTime = moment().format("LTS");
     var currentTime = $("#currentTime");
     console.log("this is time");
     currentTime.text(nowTime);
-    setInterval(headerClock,1000);
     }
+    setInterval(headerClock,1000);
    
-    
+    //headerClock();
 
 
     //Time date on the header
@@ -132,9 +131,9 @@ $(document).ready(function(){
             var timeColumn = $("<div>");
             timeColumn.addClass("col-md-2 col-sm-2");
             var inputColumn = $("<div>");
-            inputColumn.addClass("col-md-9  col-sm-8");
+            inputColumn.addClass("col-md-8  col-sm-8");
             var saveButtonColumn = $("<div>");
-            saveButtonColumn.addClass("col-md-1 col-sm-2");
+            saveButtonColumn.addClass("col-md-2 col-sm-2");
     
             const timeStamp = $("<div>");
             timeStamp.attr("class","timeStamp");
@@ -268,9 +267,9 @@ $(document).ready(function(){
             var timeColumn = $("<div>");
             timeColumn.addClass("col-md-2 col-sm-2");
             var inputColumn = $("<div>");
-            inputColumn.addClass("col-md-9  col-sm-8");
+            inputColumn.addClass("col-md-8  col-sm-8");
             var saveButtonColumn = $("<div>");
-            saveButtonColumn.addClass("col-md-1 col-sm-2");
+            saveButtonColumn.addClass("col-md-2 col-sm-2");
     
             const timeStamp = $("<div>");
             timeStamp.attr("class","timeStamp");
@@ -401,9 +400,9 @@ $(document).ready(function(){
         var timeColumn = $("<div>");
         timeColumn.addClass("col-md-2 col-sm-2");
         var inputColumn = $("<div>");
-        inputColumn.addClass("col-md-9  col-sm-8");
+        inputColumn.addClass("col-md-8  col-sm-8");
         var saveButtonColumn = $("<div>");
-        saveButtonColumn.addClass("col-md-1 col-sm-2");
+        saveButtonColumn.addClass("col-md-2 col-sm-2");
 
         const timeStamp = $("<div>");
         timeStamp.attr("class","timeStamp");

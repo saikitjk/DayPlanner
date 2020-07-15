@@ -68,17 +68,17 @@ body {
 .col-md-2{
     padding-right:0;
     padding-left:0;
-    width: 5%
+    width: 10%
 }
-.col-md-9{
+.col-md-8{
     padding-right:0;
     padding-left:0;
-    width: 90%
+    width: 80%
 };
-.col-md-1{
+.col-md-2{
     padding-right:0;
     padding-left:0;
-    width: 5%
+    width: 10%
 }
 
 /*button row css*/
@@ -156,6 +156,7 @@ body {
         width: 100%;
         height: 70px;
         line-height: 5;
+        font-weight: normal;
     }
     
     .eventBox{
@@ -170,19 +171,26 @@ body {
     .col-sm-2{
         padding-right:0;
         padding-left:0;
-        width: 15%
+        width: 20%
     }
+
+    .col-sm-2{
+        padding-right:0;
+        padding-left:0;
+        width: 20%
+    }
+  
     .col-sm-8{
         padding-right:0;
         padding-left:0;
-        width: 70%
+        width: 50%
     };
 
     /*button row*/
     .col-sm-3{
         padding-right:0;
         padding-left:0;
-        width: 25%
+        width: 20%
     }
 
     
