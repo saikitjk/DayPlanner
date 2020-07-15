@@ -82,12 +82,16 @@ body {
 }
 
 /*button row css*/
-
+#buttonContainer{
+    padding-bottom: 0.5rem;
+}
 .col-md-3{
     padding-right:0;
     padding-left:0;
     width: 25%
 }
+
+
 
 
 /*footer*/

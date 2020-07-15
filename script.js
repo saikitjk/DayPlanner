@@ -88,14 +88,9 @@ $(document).ready(function(){
         $("#previousDate").show();
         var prevDay = moment().subtract(1, "days").format("MMMM DD gggg, dddd");
         var lastDay = $("#previousDate");
-        function headerClock(){
+     
         //Time date on the header
         lastDay.text(prevDay);
-
-        }
-    
-        headerClock();
-        setInterval(headerClock,1000);
         //Time date on the header
     
         //retrieve event
@@ -169,6 +164,7 @@ $(document).ready(function(){
             //console.log("gg" + i);
             saveButton.attr("prevSaveIndex",i);
             saveButton.attr("class","far fa-save saveButton");
+            saveButton.text("Set")
             eventRow.append(saveButtonColumn);
             saveButtonColumn.append(saveButton);
     
@@ -228,14 +224,9 @@ $(document).ready(function(){
         $("#nextDate").show()
         var nextDay = moment().add(1, "days").format("MMMM DD gggg, dddd");
         var comingDay = $("#nextDate");
-        function headerClock(){
+     
         //Time date on the header
         comingDay.text(nextDay);
-
-        }
-    
-        headerClock();
-        setInterval(headerClock,1000);
         //Time date on the header
     
         //retrieve event
@@ -309,6 +300,7 @@ $(document).ready(function(){
             //console.log("gg" + index);
             saveButton.attr("nextSaveIndex",i);
             saveButton.attr("class","far fa-save saveButton");
+            saveButton.text("Set");
             eventRow.append(saveButtonColumn);
             saveButtonColumn.append(saveButton);
     
@@ -438,6 +430,7 @@ $(document).ready(function(){
         //console.log("gg" + index);
         saveButton.attr("saveIndex",i);
         saveButton.attr("class","far fa-save saveButton");
+        saveButton.text("Set");
         eventRow.append(saveButtonColumn);
         saveButtonColumn.append(saveButton);
 
