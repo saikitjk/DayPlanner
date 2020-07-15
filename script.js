@@ -1,4 +1,20 @@
 $(document).ready(function(){
+    
+    headerClock();
+    //Time date on the header
+    function headerClock(){
+    var nowTime = moment().format("LTS");
+    var currentTime = $("#currentTime");
+    console.log("this is time");
+    currentTime.text(nowTime);
+    setInterval(headerClock,1000);
+    }
+   
+    
+
+
+    //Time date on the header
+    //control buttons
     var thisDay = true;
     var dayBefore = false;
     var dayAfter = false;
@@ -165,8 +181,7 @@ $(document).ready(function(){
            //on click save button
            $(document).on("click","button", function(event){
                 event.preventDefault();  
-                //var event2Save = document.getElementById("eventBox").value;
-                //console.log("previous button");
+
                
     
                 var prevSaveIndex = $(this).attr("prevSaveIndex");
@@ -190,18 +205,11 @@ $(document).ready(function(){
                 localStorage.setItem("prevStoredArray", JSON.stringify(prevEventArray));
                 console.log("previous remove worked")
                 prevSavedEvent = JSON.parse(localStorage.getItem("prevStoredArray"));
-                //location.reload();
+                location.reload();
             }
             return{
-                prevResetEvent:prevResetEvent
+                prevResetEvent:prevResetEvent //function scooping
             };
-        /*
-            //onclick clear button
-            $("#clearEvent").on("click",function(){
-                console.log("preveious day resetbutton worked")
-                prevResetEvent();
-            });
-        */
 
     }
 
@@ -312,11 +320,7 @@ $(document).ready(function(){
     
            //on click save button
            $(document).on("click","button", function(event){
-                event.preventDefault();  
-                //var event2Save = document.getElementById("eventBox").value;
-                //console.log(event2Save);
-               
-    
+                event.preventDefault();   
                 var nextSaveIndex = $(this).attr("nextSaveIndex");
                 var nextInputId = "#nextInputBoxId" + nextSaveIndex;
                 var nextValue = $(nextInputId).val();
@@ -338,19 +342,11 @@ $(document).ready(function(){
                 localStorage.setItem("nextStoredArray", JSON.stringify(nextEventArray));
                 console.log("next day remove worked")
                 nextSavedEvent = JSON.parse(localStorage.getItem("nextStoredArray"));
-                //location.reload();
+                location.reload();
             }
             return{
-                nextResetEvent: nextResetEvent
+                nextResetEvent: nextResetEvent //function scooping
             };
-        /*
-            //onclick clear button
-            $("#clearEvent").on("click",function(){
-                console.log("next day resetbutton worked")
-                nextResetEvent();
-                
-            });
-        */
 
     
         
@@ -369,21 +365,12 @@ $(document).ready(function(){
     $("#currentDay").show();
     $("#currentTime").show();
     var nowDay = moment().format("MMMM DD gggg, dddd");
-    var nowTime = moment().format("LTS");
-    var currentHour = moment().hour();
     var currentDay = $("#currentDay");
-    var currentTime = $("#currentTime");
- 
-    function headerClock(){
-    //Time date on the header
+    var currentHour = moment().hour();
+    //header date
     currentDay.text(nowDay);
-    currentTime.text(nowTime);
-    }
 
-    headerClock();
-    setInterval(headerClock,1000);
-    //Time date on the header
-
+ 
     //retrieve event
     var eventArray = [];
     savedEvent = JSON.parse(localStorage.getItem("storedArray"));
@@ -489,10 +476,10 @@ $(document).ready(function(){
             localStorage.setItem("storedArray", JSON.stringify(eventArray));
             console.log(" today remove worked")
             savedEvent = JSON.parse(localStorage.getItem("storedArray"));
-            //location.reload();
+            location.reload();
         }
         return{
-            resetEvent: resetEvent
+            resetEvent: resetEvent //function scooping
         };
 
 
@@ -557,22 +544,20 @@ $(document).ready(function(){
             console.log("bye");
             if(thisDay === true){
                 //console.log("today event worked");
-                var gg = today();
+                var gg = today(); //calling function inside the function
                 gg.resetEvent();
                 
             }
             else if(dayAfter === true){
                 //console.log("next event worked");
-                nextResetEvent();
-                var diu = nextDay();
-                diu.nextResetEvent();
+                var diu = nextDay(); //calling function inside the function
+                diu.nextResetEvent(); 
                 
             }
             else if(dayBefore === true){
                 console.log("prev event worked");
-                prevResetEvent();
-                var dllm = previousDay();
-                dllm.prevResetEvent
+                var dllm = previousDay(); //calling function inside the function
+                dllm.prevResetEvent();
                 
             }
         });
