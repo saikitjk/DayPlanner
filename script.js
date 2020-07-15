@@ -239,7 +239,7 @@ $(document).ready(function(){
         nextEventRowContainer.empty();
         
     
-        for (var hour = 0; hour <= 24; hour++) {
+        for (var hour = 0; hour < 24; hour++) {
             //set index for labeling input box
             var i = hour;
             var j = hour;
@@ -251,7 +251,7 @@ $(document).ready(function(){
             }
             //display time
             var ampm = "";
-            if (hour > 12) { 
+            if (hour > 11) { 
                 ampm = "PM";
             } 
             else {
@@ -299,7 +299,7 @@ $(document).ready(function(){
             //console.log("gg" + index);
             saveButton.attr("nextSaveIndex",i);
             saveButton.attr("class","far fa-save saveButton");
-            saveButton.text("Set");
+            saveButton.text("Save");
             eventRow.append(saveButtonColumn);
             saveButtonColumn.append(saveButton);
     
@@ -372,7 +372,7 @@ $(document).ready(function(){
     var eventRowContainer = $("#eventContainer");
     eventRowContainer.empty();
 
-    for (var hour = 0; hour <= 24; hour++) {
+    for (var hour = 0; hour < 24; hour++) {
         //set index for labeling input box
         var i = hour;
         var j = hour;
@@ -384,7 +384,7 @@ $(document).ready(function(){
         }
         //display time
         var ampm = "";
-        if (hour > 12) { 
+        if (hour > 11) { 
             ampm = "PM";
         } 
         else {
@@ -429,7 +429,7 @@ $(document).ready(function(){
         //console.log("gg" + index);
         saveButton.attr("saveIndex",i);
         saveButton.attr("class","far fa-save saveButton");
-        saveButton.text("Set");
+        saveButton.text("Save");
         eventRow.append(saveButtonColumn);
         saveButtonColumn.append(saveButton);
 
@@ -489,7 +489,7 @@ $(document).ready(function(){
             else if (inputBoxId === currentHour){
                 eventInputBox.css("background-color","#dbffff");
                 eventInputBox.css("opacity","0.6");
-                eventInputBox.css("font-family", "bold");
+                eventInputBox.css("font-weight", "bold");
                 
             }
             else {
